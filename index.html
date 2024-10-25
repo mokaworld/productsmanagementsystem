@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:slnt,wght@-11..11,200..1000&family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/scss/styles/styles.css" />
+    <title>warehouse management</title>
+  </head>
+  <body class="dark">
+
+    <div class="loading-page">
+      <div class="loader"></div>
+    </div>
+  
+    <div class="system">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="sidebar">
+              <h3>products management system</h3>
+              <form>
+                <label for="deviceName">deviceName</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="deviceName"
+                  id="deviceName"
+                />
+
+                <label for="price">price</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="price"
+                  id="price"
+                />
+
+                <label for="taxes">taxes</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="taxes"
+                  id="taxes"
+                />
+
+                <label for="ads">ads</label>
+                <input class="form-control" type="text" name="ads" id="ads" />
+
+                <label for="discount">discount</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="discount"
+                  id="discount"
+                />
+                <p class="total text-center" id="total">0 LE</p>
+
+                <label for="category">category</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="category"
+                  id="category"
+                />
+                <div class="count-inp" id="count-inp">
+                  <label for="count">count</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="count"
+                    id="count"
+                  />
+                </div>
+
+                <button class="btn btn-danger create-btn" id="submit">
+                  create
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="content text-center">
+              <div class="search">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Search ..."
+                  aria-label="Search"
+                  id="searchBar"
+                  onkeyup="search(this.value)"
+                />
+                <button onclick="getSearchMode(this.id)" class="btn btn-danger search-btn" id="searchTitle">
+                  Search by title
+                </button>
+                <button onclick="getSearchMode(this.id)" class="btn btn-warning search-btn" id="searchCategory">
+                  Search by category
+                </button>
+                <div class="mode" id="mood">
+                  <img src="assets/images/mode-icon/sun.png" alt="sun" id="sun">
+                  <img src="assets/images/mode-icon/half-moon.png" alt="sun" id="moon">
+                </div>
+                
+              </div>
+              <button
+                onclick="deleteAll()"
+                class="btn btn-danger delete-all"
+                id="deleteAll"
+              ></button>
+              <table class="table table-wrapper">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">product</th>
+                    <th scope="col">price</th>
+                    <th scope="col">taxes</th>
+                    <th scope="col">ads</th>
+                    <th scope="col">discount</th>
+                    <th scope="col">total</th>
+                    <th scope="col">category</th>
+                    <th scope="col">update</th>
+                    <th scope="col">delete</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- START SCRIPTS -->
+    <script src="js/all.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
